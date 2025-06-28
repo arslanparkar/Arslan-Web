@@ -8,9 +8,9 @@ interface PageLayoutProps {
 
 export default function PageLayout({ children }: PageLayoutProps) {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
       <Navigation />
-      <main className="pt-20">{children}</main>
+      <main>{children}</main>
       <Footer />
     </div>
   )
