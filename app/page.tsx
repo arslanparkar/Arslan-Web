@@ -41,7 +41,7 @@ export default function HomePage() {
         </section>
 
         <section className="px-4 py-24 sm:px-6 lg:px-8">
-          <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2">
+          <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <p className="mb-8 text-sm uppercase tracking-[0.3em] text-gray-500">A trajectory across disciplines</p>
               <h2 className="max-w-xl text-5xl font-extralight leading-tight tracking-tight text-black dark:text-white md:text-6xl">From semiconductor benches to conversational agents.</h2>
@@ -51,6 +51,10 @@ export default function HomePage() {
               <p>Before Boston, I co-founded INFOBAY, led a team of seven, and delivered AI and full-stack systems for 24+ enterprise clients across finance, healthcare, real estate, and technology.</p>
               <Link href="/about" className="w-fit border-b border-gray-400 pb-2 text-lg tracking-wide text-black hover:border-black dark:text-white">Read my experience</Link>
             </div>
+          </div>
+          <div className="mx-auto mt-16 grid max-w-7xl gap-4 md:grid-cols-[1.35fr_0.65fr]">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/infineon.JPG-e3n0PJDMkl7Xx7LHEAns074632jQue.jpeg" alt="Infineon hardware test bench with dual displays and embedded electronics" className="h-72 w-full object-cover grayscale transition duration-500 hover:grayscale-0 md:h-96" />
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/media%20in%20motion%201-2qVjX3bNIDk4RGU3vuSTooxbcxbF6U.jpeg" alt="VR research demonstration in a university lab" className="h-72 w-full object-cover grayscale transition duration-500 hover:grayscale-0 md:h-96" />
           </div>
         </section>
 
