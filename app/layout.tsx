@@ -4,8 +4,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Arslan Parkar - Portfolio",
-  description: "Portfolio of Arslan Parkar - AI/ML Engineer & Researcher",
+  title: "Arslan Parkar | AI/ML Engineer & Technology Leader",
+  description: "Portfolio of Arslan Parkar, an AI/ML engineer, automation builder, researcher, and technology leader in Boston.",
   generator: "v0.dev",
 }
 

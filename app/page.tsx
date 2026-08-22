@@ -1,203 +1,70 @@
 import Link from "next/link"
 import PageLayout from "@/components/page-layout"
 
+const focusAreas = [
+  ["AI systems", "Agentic workflows, evaluation harnesses, RAG, and practical ML that turns data into decisions."],
+  ["Verification & automation", "Python-first test infrastructure for power electronics, instrumentation, and high-confidence releases."],
+  ["Product engineering", "End-to-end systems that connect thoughtful interfaces, reliable APIs, and measurable business outcomes."],
+]
+
 export default function HomePage() {
   return (
     <PageLayout>
-      {/* Hero Section */}
-      <section className="pt-40 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-24">
-            <div className="mb-12">
-              <h1 className="text-7xl md:text-9xl font-extralight mb-12 leading-none tracking-tight text-black dark:text-white">
-                Arslan Parkar
-              </h1>
-              <div className="text-2xl md:text-3xl font-light text-gray-600 dark:text-gray-400 mb-16 tracking-wide">
-                Full-Stack Visionary • AI Architect • Startup Founder
+      <main>
+        <section className="px-4 pb-24 pt-40 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <p className="mb-8 text-sm uppercase tracking-[0.3em] text-gray-500">AI / ML · Automation · Product Engineering</p>
+            <h1 className="max-w-5xl text-6xl font-extralight leading-[0.95] tracking-tight text-black dark:text-white md:text-9xl">
+              Building intelligent systems that work in the real world.
+            </h1>
+            <div className="mt-16 grid gap-12 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
+              <p className="max-w-3xl text-2xl font-light leading-relaxed text-gray-600 dark:text-gray-300">
+                I&apos;m Arslan Parkar, an AI/ML engineer and technology leader based in Boston. I move from research to production—designing models, automating complex workflows, and shipping products people can rely on.
+              </p>
+              <div className="flex flex-wrap gap-8 lg:justify-end">
+                <Link href="/projects" className="border-b border-black pb-2 text-lg tracking-wide text-black transition-colors hover:border-gray-400 dark:border-white dark:text-white">View projects</Link>
+                <Link href="/contact" className="border-b border-gray-400 pb-2 text-lg tracking-wide text-gray-600 transition-colors hover:border-black dark:text-gray-300">Let&apos;s talk</Link>
               </div>
             </div>
-
-            <div className="max-w-5xl mx-auto mb-20">
-              <p className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-12 leading-relaxed font-light">
-                "Transforming complex problems into elegant solutions, one breakthrough at a time"
-              </p>
-              <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed max-w-4xl mx-auto">
-                I'm not just writing code—I'm composing digital symphonies. Currently sculpting the future through
-                graduate research at Northeastern University while architecting intelligent systems that bridge
-                imagination and reality.
-              </p>
-            </div>
-
-            <Link href="/contact">
-              <button className="text-black dark:text-white border-b border-gray-400 dark:border-gray-600 hover:border-black dark:hover:border-white transition-colors duration-500 text-xl pb-2 tracking-wide">
-                Let's Create Something Extraordinary
-              </button>
-            </Link>
           </div>
+        </section>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-16 max-w-6xl mx-auto">
-            <div className="text-center">
-              <div className="w-px h-20 bg-gray-200 dark:bg-gray-800 mx-auto mb-8"></div>
-              <div className="text-4xl font-extralight mb-4 text-black dark:text-white">50+</div>
-              <div className="text-sm text-gray-500 uppercase tracking-widest">Projects Delivered</div>
-            </div>
-            <div className="text-center">
-              <div className="w-px h-20 bg-gray-200 dark:bg-gray-800 mx-auto mb-8"></div>
-              <div className="text-4xl font-extralight mb-4 text-black dark:text-white">150+</div>
-              <div className="text-sm text-gray-500 uppercase tracking-widest">Clients Served</div>
-            </div>
-            <div className="text-center">
-              <div className="w-px h-20 bg-gray-200 dark:bg-gray-800 mx-auto mb-8"></div>
-              <div className="text-4xl font-extralight mb-4 text-black dark:text-white">2M+</div>
-              <div className="text-sm text-gray-500 uppercase tracking-widest">User Impressions</div>
-            </div>
-            <div className="text-center">
-              <div className="w-px h-20 bg-gray-200 dark:bg-gray-800 mx-auto mb-8"></div>
-              <div className="text-4xl font-extralight mb-4 text-black dark:text-white">$5M+</div>
-              <div className="text-sm text-gray-500 uppercase tracking-widest">Revenue Impact</div>
-            </div>
+        <section className="border-y border-gray-200 px-4 py-16 dark:border-gray-800 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-3">
+            {focusAreas.map(([title, description]) => (
+              <article key={title} className="border-l border-gray-300 pl-8 dark:border-gray-700">
+                <h2 className="mb-4 text-2xl font-light tracking-wide text-black dark:text-white">{title}</h2>
+                <p className="leading-relaxed text-gray-500 dark:text-gray-400">{description}</p>
+              </article>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Philosophy Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
+        <section className="px-4 py-24 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2">
             <div>
-              <div className="w-px h-24 bg-gray-200 dark:bg-gray-800 mb-12"></div>
-              <h2 className="text-5xl md:text-6xl font-extralight mb-12 leading-tight tracking-tight text-black dark:text-white">
-                Crafting Tomorrow's <span className="text-gray-500 dark:text-gray-400">Technology Today</span>
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-12 leading-relaxed font-light">
-                I'm a digital craftsman who sees code as poetry and data as paint. My journey from Mumbai's bustling
-                tech scene to Boston's innovation hub has been guided by one principle: create technology that doesn't
-                just work, but inspires.
-              </p>
-              <Link href="/about">
-                <button className="text-gray-600 dark:text-gray-300 border-b border-gray-400 dark:border-gray-700 hover:border-gray-600 dark:hover:border-gray-400 hover:text-black dark:hover:text-white transition-all duration-500 pb-2 text-lg tracking-wide">
-                  Discover My Journey
-                </button>
-              </Link>
+              <p className="mb-8 text-sm uppercase tracking-[0.3em] text-gray-500">A trajectory across disciplines</p>
+              <h2 className="max-w-xl text-5xl font-extralight leading-tight tracking-tight text-black dark:text-white md:text-6xl">From semiconductor benches to conversational agents.</h2>
             </div>
-
-            <div className="space-y-16">
-              <div className="border-l border-gray-200 dark:border-gray-800 pl-12">
-                <h3 className="text-2xl font-light mb-6 tracking-wide text-black dark:text-white">
-                  Entrepreneurial Journey
-                </h3>
-                <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-                  Founded Infobay - Transformed ideas into enterprise solutions for Axis Bank, Audi India, and UPL
-                </p>
-              </div>
-              <div className="border-l border-gray-200 dark:border-gray-800 pl-12">
-                <h3 className="text-2xl font-light mb-6 tracking-wide text-black dark:text-white">
-                  Financial Intelligence
-                </h3>
-                <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-                  AI-Driven Risk Models - Improved debt recovery by 25% through predictive analytics magic
-                </p>
-              </div>
-              <div className="border-l border-gray-200 dark:border-gray-800 pl-12">
-                <h3 className="text-2xl font-light mb-6 tracking-wide text-black dark:text-white">
-                  Research Innovation
-                </h3>
-                <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-                  Northeastern University - Pioneering digital preservation and XR gaming experiences
-                </p>
-              </div>
+            <div className="flex flex-col gap-8 text-xl font-light leading-relaxed text-gray-600 dark:text-gray-300">
+              <p>At Infineon, I automate validation benches and build ML systems that make chip testing faster and safer. At Northeastern, I build digital preservation platforms, research pipelines, and XR experiences.</p>
+              <p>Before Boston, I co-founded INFOBAY, led a team of seven, and delivered AI and full-stack systems for 24+ enterprise clients across finance, healthcare, real estate, and technology.</p>
+              <Link href="/about" className="w-fit border-b border-gray-400 pb-2 text-lg tracking-wide text-black hover:border-black dark:text-white">Read my experience</Link>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Expertise Canvas */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-24">
-            <div className="w-px h-24 bg-gray-200 dark:bg-gray-800 mx-auto mb-12"></div>
-            <h2 className="text-5xl md:text-6xl font-extralight mb-8 tracking-tight text-black dark:text-white">
-              The Canvas of Expertise
-            </h2>
-            <p className="text-xl text-gray-500 dark:text-gray-400 max-w-3xl mx-auto font-light">
-              Where technical mastery meets creative vision
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16">
-            <div className="text-center">
-              <div className="mb-12">
-                <div className="w-px h-20 bg-gray-200 dark:bg-gray-800 mx-auto mb-8"></div>
-                <h3 className="text-2xl font-light mb-6 tracking-wide text-black dark:text-white">
-                  Full-Stack Artistry
-                </h3>
-                <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-                  React • Node.js • Python • TypeScript • GraphQL
-                </p>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <div className="mb-12">
-                <div className="w-px h-20 bg-gray-200 dark:bg-gray-800 mx-auto mb-8"></div>
-                <h3 className="text-2xl font-light mb-6 tracking-wide text-black dark:text-white">AI Mastery</h3>
-                <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-                  TensorFlow • PyTorch • Computer Vision • NLP • Financial ML
-                </p>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <div className="mb-12">
-                <div className="w-px h-20 bg-gray-200 dark:bg-gray-800 mx-auto mb-8"></div>
-                <h3 className="text-2xl font-light mb-6 tracking-wide text-black dark:text-white">
-                  Cloud Architecture
-                </h3>
-                <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-                  AWS • Docker • Kubernetes • Microservices • Real-time Systems
-                </p>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <div className="mb-12">
-                <div className="w-px h-20 bg-gray-200 dark:bg-gray-800 mx-auto mb-8"></div>
-                <h3 className="text-2xl font-light mb-6 tracking-wide text-black dark:text-white">Business Alchemy</h3>
-                <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-                  Startup Founder • Team Leadership • Enterprise Solutions
-                </p>
-              </div>
+        <section className="px-4 pb-28 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-5xl border-t border-gray-200 pt-16 text-center dark:border-gray-800">
+            <h2 className="text-4xl font-extralight tracking-tight text-black dark:text-white md:text-6xl">Good technology is precise, useful, and human.</h2>
+            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-gray-500 dark:text-gray-400">Explore the work, research, and ideas behind the systems I build.</p>
+            <div className="mt-12 flex flex-wrap justify-center gap-8">
+              <Link href="/projects" className="border-b border-black pb-2 text-lg text-black dark:border-white dark:text-white">Explore projects</Link>
+              <Link href="/research" className="border-b border-gray-400 pb-2 text-lg text-gray-600 dark:text-gray-300">Explore research</Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="w-px h-24 bg-gray-200 dark:bg-gray-800 mx-auto mb-12"></div>
-          <h2 className="text-5xl md:text-6xl font-extralight mb-12 leading-tight tracking-tight text-black dark:text-white">
-            Ready to Build the Future?
-          </h2>
-          <p className="text-xl text-gray-500 dark:text-gray-400 mb-16 leading-relaxed font-light max-w-4xl mx-auto">
-            Passionate about creating innovative solutions in Full-Stack Development, ML Engineering, and FinTech where
-            innovation meets impact.
-          </p>
-          <div className="flex flex-wrap justify-center gap-16">
-            <Link href="/research">
-              <button className="text-gray-600 dark:text-gray-300 border-b border-gray-400 dark:border-gray-700 hover:border-gray-600 dark:hover:border-gray-400 hover:text-black dark:hover:text-white transition-all duration-500 pb-2 text-lg tracking-wide">
-                Explore My Research
-              </button>
-            </Link>
-            <Link href="/contact">
-              <button className="text-black dark:text-white border-b border-gray-400 dark:border-gray-600 hover:border-black dark:hover:border-white transition-colors duration-500 pb-2 text-lg tracking-wide">
-                Start a Conversation
-              </button>
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
+      </main>
     </PageLayout>
   )
 }
