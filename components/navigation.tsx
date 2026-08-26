@@ -28,10 +28,8 @@ export default function Navigation() {
 
   const handleNavClick = () => {
     setIsMenuOpen(false)
-    // Scroll to top when navigating
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    }, 100)
+    // Reset scroll immediately so navigation never feels delayed.
+    window.scrollTo({ top: 0, behavior: "auto" })
   }
 
   if (!mounted) return null
