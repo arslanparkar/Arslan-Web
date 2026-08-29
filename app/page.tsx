@@ -52,10 +52,6 @@ export default function HomePage() {
               <Link href="/about" className="w-fit border-b border-gray-400 pb-2 text-lg tracking-wide text-black hover:border-black dark:text-white">Read my experience</Link>
             </div>
           </div>
-          <div className="mx-auto mt-16 grid max-w-7xl gap-4 md:grid-cols-[1.35fr_0.65fr]">
-            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/infineon.JPG-e3n0PJDMkl7Xx7LHEAns074632jQue.jpeg" alt="Electronic test bench and dual-screen aviation visualization from my Infineon lab work" className="h-72 w-full object-cover grayscale transition duration-500 hover:grayscale-0 md:h-96" />
-            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/media%20in%20motion%201-2qVjX3bNIDk4RGU3vuSTooxbcxbF6U.jpeg" alt="Media in Motion symposium VR research demonstration at Northeastern University" className="h-72 w-full object-cover grayscale transition duration-500 hover:grayscale-0 md:h-96" />
-          </div>
         </section>
 
         <section className="px-4 pb-28 sm:px-6 lg:px-8">
