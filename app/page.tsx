@@ -29,7 +29,13 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="border-y border-gray-200 px-4 py-16 dark:border-gray-800 sm:px-6 lg:px-8">
+        <section className="border-y border-gray-200 px-4 py-12 dark:border-gray-800 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {[["60h → 3h", "validation cycle"], ["50K+", "data points modeled"], ["24+", "enterprise clients"], ["100K+", "monthly users served"]].map(([value, label]) => <div key={label}><p className="text-3xl font-light tracking-tight text-black dark:text-white">{value}</p><p className="mt-2 text-sm uppercase tracking-[0.14em] text-gray-500">{label}</p></div>)}
+          </div>
+        </section>
+
+        <section className="border-b border-gray-200 px-4 py-16 dark:border-gray-800 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-3">
             {focusAreas.map(([title, description]) => (
               <article key={title} className="border-l border-gray-300 pl-8 dark:border-gray-700">
