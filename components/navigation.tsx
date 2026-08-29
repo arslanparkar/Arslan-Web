@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useTheme } from "next-themes"
@@ -9,13 +9,8 @@ import { Menu, X, Sun, Moon } from "lucide-react"
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
   const { theme, setTheme } = useTheme()
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -31,8 +26,6 @@ export default function Navigation() {
     // Reset scroll immediately so navigation never feels delayed.
     window.scrollTo({ top: 0, behavior: "auto" })
   }
-
-  if (!mounted) return null
 
   return (
     <nav className="fixed top-0 w-full bg-white/95 dark:bg-black/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 z-50">
