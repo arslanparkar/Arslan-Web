@@ -1,360 +1,39 @@
 import Link from "next/link"
 import PageLayout from "@/components/page-layout"
 
+const experience = [
+  { role: "Machine Learning & Automation Engineer (Co-op)", company: "Infineon Technologies", location: "Boston, MA", dates: "Jan 2026 – Dec 2026", points: ["Automated six power-stage validation benches with Python, SCPI, and I2C, reducing a 60-hour manual test cycle to three hours.", "Built 4,000+ hour MOSFET endurance testing with fail-safe monitoring and automated burn-out detection.", "Trained pass/fail classifiers on 50,000+ data points at 96% precision and built an efficiency predictor that saved an estimated $150K annually.", "Built an access-controlled multi-agent platform for natural-language project analysis, custom charts, and talk-to-your-docs workflows.", "Integrated instrument control, structured measurements, configuration files, and safety checks into repeatable validation workflows.", "Turned raw bench output into analysis-ready datasets and practical reporting so engineers could compare runs, identify failures, and make decisions faster."] },
+  { role: "Machine Learning Research Assistant", company: "Northeastern University · Center for Transformative Media", location: "Boston, MA", dates: "Jan 2025 – Dec 2025", points: ["Built technology end to end for Professor Adriana de Souza e Silva and the Center for Transformative Media, translating research questions into working software and public-facing systems.", "Shipped the Retro Mobile Game Database (rmgd.org), including its data model, discovery experience, and conversational copilot for answering questions over the collection.", "Developed reproducible ML pipelines for retro-game classification, metadata enrichment, and analysis across a growing archival dataset.", "Created AR/VR Unity experiences for the Media in Motion symposium and supported live demonstrations, iteration, and research communication.", "Collaborated across design, engineering, and research workflows to make digital media scholarship more accessible to students, faculty, and public audiences."] },
+  { role: "Co-founder & CTO", company: "INFOBAY", location: "Mumbai, India", dates: "Mar 2022 – Aug 2024", points: ["Led technology for a startup serving 24+ enterprise clients across finance, healthcare, real estate, e-commerce, and technology.", "Built a debt-recovery model that improved effective collection by 20% and was later acquired by PwC.", "Delivered fraud detection, model monitoring, and full-stack infrastructure with 99.5% uptime and 1.2s to 400ms latency improvement.", "Translated client requirements into technical roadmaps, production releases, and maintainable data workflows across multiple domains.", "Established deployment, monitoring, and quality practices that made experiments easier to validate and systems safer to operate."] },
+  { role: "Associate Software Development Engineer", company: "Blustream Integrated", location: "Mumbai, India", dates: "Mar 2021 – Mar 2022", points: ["Delivered three production analytics dashboards used by 100,000+ monthly users.", "Built React, Node, and PostgreSQL systems and automated test suites that caught 40+ critical issues before launch.", "Designed responsive data flows and reusable frontend patterns that kept complex analytics understandable for everyday users.", "Worked across requirements, implementation, debugging, and release support to move products from rough specification to stable production software."] },
+]
+
+const education = [
+  ["M.S. Information Systems", "Northeastern University", "Boston, MA · Sep 2024 – Dec 2026", "GPA 3.60 · Algorithms, Data Science Methods, MLOps, Prompt Engineering, Application Engineering"],
+  ["B.E. Artificial Intelligence & Data Science", "University of Mumbai", "India · Jul 2021 – May 2024", "GPA 3.60 · Deep Learning, Computer Vision, NLP, Cloud Computing, Statistics, Big Data Analytics"],
+]
+
 export default function AboutPage() {
-  return (
-    <PageLayout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <div className="w-px h-24 bg-gray-200 dark:bg-gray-800 mx-auto mb-12"></div>
-            <h1 className="text-6xl md:text-8xl font-extralight mb-12 tracking-tight text-black dark:text-white">
-              Sculpting Digital Experiences
-            </h1>
-            <p className="text-2xl text-gray-600 dark:text-gray-400 font-light tracking-wide">
-              One Algorithm at a Time
-            </p>
-          </div>
-
-          <div className="max-w-5xl mx-auto text-center">
-            <p className="text-2xl text-gray-600 dark:text-gray-400 mb-12 font-light leading-relaxed">
-              "Technology is not just about solving problems—it's about reimagining possibilities."
-            </p>
-            <p className="text-xl text-gray-500 dark:text-gray-400 leading-relaxed font-light">
-              I'm a digital craftsman who sees code as poetry and data as paint. My journey from Mumbai's bustling tech
-              scene to Boston's innovation hub has been guided by one principle: create technology that doesn't just
-              work, but inspires.
-            </p>
-          </div>
+  return <PageLayout><main>
+    <section className="px-4 pb-20 pt-36 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl">
+      <div className="flex flex-col gap-12 md:flex-row md:items-end md:justify-between">
+        <div className="max-w-5xl">
+          <p className="mb-8 text-sm uppercase tracking-[0.3em] text-gray-500">About Arslan Parkar</p>
+          <h1 className="text-6xl font-extralight leading-[0.95] tracking-tight text-black dark:text-white md:text-8xl">Engineer, researcher, and builder of useful intelligence.</h1>
+          <p className="mt-12 max-w-3xl text-2xl font-light leading-relaxed text-gray-600 dark:text-gray-300">I work at the intersection of machine learning, hardware validation, automation, and product engineering—turning ambitious ideas into dependable systems.</p>
         </div>
-      </section>
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Arslan-Parkar-2-sKwhw6Xnw63njWhguxpD9rso0ghD7P.jpg" alt="Portrait of Arslan Parkar" className="h-64 w-52 shrink-0 object-cover grayscale md:h-80 md:w-64" />
+      </div>
+    </div></section>
 
-      {/* Technical Palette */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-24">
-            <div className="w-px h-24 bg-gray-200 dark:bg-gray-800 mx-auto mb-12"></div>
-            <h2 className="text-5xl md:text-6xl font-extralight mb-8 tracking-tight text-black dark:text-white">
-              The Technical Palette
-            </h2>
-          </div>
+    <section className="border-y border-gray-200 px-4 py-20 dark:border-gray-800 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl">
+      <p className="mb-12 text-sm uppercase tracking-[0.3em] text-gray-500">01 · Professional experience</p>
+      <div className="flex flex-col gap-16">{experience.map((item) => <article key={item.company} className="grid gap-8 border-b border-gray-200 pb-16 last:border-0 dark:border-gray-800 lg:grid-cols-[0.9fr_1.1fr]"><div><h2 className="text-3xl font-light tracking-wide text-black dark:text-white">{item.role}</h2><p className="mt-4 text-xl text-gray-600 dark:text-gray-300">{item.company}</p><p className="mt-2 text-gray-500">{item.location} · {item.dates}</p>{item.company === "Infineon Technologies" && <div className="mt-8 grid gap-3 sm:grid-cols-2"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/infineon.JPG-e3n0PJDMkl7Xx7LHEAns074632jQue.jpeg" alt="Infineon electronic test bench" className="h-36 w-full object-cover grayscale" /><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/infineon%202-1XtRd6N8qcsaqz48WO3Kh2EVdVYKiZ.jpeg" alt="Infineon hardware validation equipment" className="h-36 w-full object-cover grayscale" /></div>}{item.company.includes("Northeastern") && <div className="mt-8 grid gap-3 sm:grid-cols-2"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Media-in-Motion-faculty-1024x679-sqdD015cfSQfEzeNYxiv18Xb0fjgcR.png" alt="Northeastern Media in Motion symposium discussion" className="h-36 w-full object-cover grayscale" /><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/media%20in%20motion%202.JPG-7tbV7GoMH3ADAyrllqjeolBeCoIiHV.jpeg" alt="Northeastern Media in Motion VR research demonstration" className="h-36 w-full object-cover grayscale" /></div>}</div><ul className="flex flex-col gap-4 text-gray-600 leading-relaxed dark:text-gray-300">{item.points.map((point) => <li key={point}>• {point}</li>)}</ul></article>)}</div>
+    </div></section>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-20">
-            <div className="p-8 border border-gray-200 dark:border-gray-800">
-              <div className="w-px h-12 bg-gray-300 dark:bg-gray-700 mb-8"></div>
-              <h3 className="text-2xl font-light mb-6 tracking-wide text-black dark:text-white">Creative Languages</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-4 font-light">Primary Brushes:</p>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                Python, JavaScript, TypeScript, Java
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 mb-4 font-light">Artistic Tools:</p>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">R, SQL, C/C++, HTML/CSS, Bash</p>
-            </div>
+    <section className="px-4 py-20 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="mb-12 text-sm uppercase tracking-[0.3em] text-gray-500">02 · Academic excellence</p><div className="grid gap-12 md:grid-cols-2">{education.map(([degree, school, details, coursework]) => <article key={degree} className="border-l border-gray-300 pl-8 dark:border-gray-700"><h2 className="text-3xl font-light text-black dark:text-white">{degree}</h2><p className="mt-4 text-xl text-gray-600 dark:text-gray-300">{school}</p><p className="mt-2 text-gray-500">{details}</p><p className="mt-8 leading-relaxed text-gray-600 dark:text-gray-400">{coursework}</p></article>)}</div></div></section>
 
-            <div className="p-8 border border-gray-200 dark:border-gray-800">
-              <div className="w-px h-12 bg-gray-300 dark:bg-gray-700 mb-8"></div>
-              <h3 className="text-2xl font-light mb-6 tracking-wide text-black dark:text-white">Web Artistry</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-4 font-light">Frontend Canvas:</p>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                React.js, Vue.js, Angular.js, Redux, Three.js
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 mb-4 font-light">Backend Architecture:</p>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">Node.js, Express.js, FastAPI, Django</p>
-            </div>
-
-            <div className="p-8 border border-gray-200 dark:border-gray-800">
-              <div className="w-px h-12 bg-gray-300 dark:bg-gray-700 mb-8"></div>
-              <h3 className="text-2xl font-light mb-6 tracking-wide text-black dark:text-white">AI Wizardry</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-4 font-light">Neural Networks:</p>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                TensorFlow, PyTorch, Keras, CNN, RNN
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 mb-4 font-light">Specialized Alchemy:</p>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">Computer Vision, NLP, Financial ML</p>
-            </div>
-
-            <div className="p-8 border border-gray-200 dark:border-gray-800">
-              <div className="w-px h-12 bg-gray-300 dark:bg-gray-700 mb-8"></div>
-              <h3 className="text-2xl font-light mb-6 tracking-wide text-black dark:text-white">Data Architecture</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-4 font-light">Storage Solutions:</p>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                PostgreSQL, MongoDB, Redis, DynamoDB
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 mb-4 font-light">Infrastructure Poetry:</p>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">Docker, Kubernetes, AWS, Microservices</p>
-            </div>
-
-            <div className="p-8 border border-gray-200 dark:border-gray-800">
-              <div className="w-px h-12 bg-gray-300 dark:bg-gray-700 mb-8"></div>
-              <h3 className="text-2xl font-light mb-6 tracking-wide text-black dark:text-white">
-                Analytics & Visualization
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-4 font-light">Data Science:</p>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                Pandas, NumPy, Scikit-Learn, Matplotlib
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 mb-4 font-light">Business Intelligence:</p>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Power BI, Tableau, Time-Series Analysis
-              </p>
-            </div>
-
-            <div className="p-8 border border-gray-200 dark:border-gray-800">
-              <div className="w-px h-12 bg-gray-300 dark:bg-gray-700 mb-8"></div>
-              <h3 className="text-2xl font-light mb-6 tracking-wide text-black dark:text-white">DevOps & Deployment</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-4 font-light">CI/CD Pipeline:</p>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">Jenkins, Git, Automated Testing</p>
-              <p className="text-gray-700 dark:text-gray-300 mb-4 font-light">Cloud Platforms:</p>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">AWS, Firebase, Real-time Systems</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Education */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-24">
-            <div className="w-px h-24 bg-gray-200 dark:bg-gray-800 mx-auto mb-12"></div>
-            <h2 className="text-5xl md:text-6xl font-extralight mb-8 tracking-tight text-black dark:text-white">
-              Academic Excellence
-            </h2>
-          </div>
-
-          <div className="space-y-16 max-w-5xl mx-auto">
-            <div className="border-b border-gray-200 dark:border-gray-800 pb-12">
-              <div className="flex justify-between items-start mb-8">
-                <div>
-                  <h3 className="text-3xl font-light mb-4 tracking-wide text-black dark:text-white">
-                    Master of Science - Information Systems
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-300 text-xl">Northeastern University, Boston, MA</p>
-                </div>
-                <span className="text-gray-600 dark:text-gray-400 tracking-wide">2024-2026</span>
-              </div>
-              <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-                Advanced Algorithms • Application Engineering • Data Science Methods • Prompt Engineering
-              </p>
-              <div className="mt-8">
-                <h4 className="text-xl font-light text-gray-800 dark:text-gray-200 mb-6 tracking-wide">
-                  Current Research Assistant
-                </h4>
-                <ul className="text-gray-600 dark:text-gray-400 space-y-3 leading-relaxed">
-                  <li>• Digital preservation platform development</li>
-                  <li>• ML pipelines for gaming evolution analysis</li>
-                  <li>• XR gaming experiences for academic symposiums</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="border-b border-gray-200 dark:border-gray-800 pb-12">
-              <div className="flex justify-between items-start mb-8">
-                <div>
-                  <h3 className="text-3xl font-light mb-4 tracking-wide text-black dark:text-white">
-                    Bachelor of Science - AI & Data Science
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-300 text-xl">University of Mumbai, India</p>
-                </div>
-                <span className="text-gray-600 dark:text-gray-400 tracking-wide">2021-2024</span>
-              </div>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Deep Learning • NLP • Data Analysis • Cloud Computing • Statistics • Product Management • Big Data
-                Analytics
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Professional Experience */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-24">
-            <div className="w-px h-24 bg-gray-200 dark:bg-gray-800 mx-auto mb-12"></div>
-            <h2 className="text-5xl md:text-6xl font-extralight mb-8 tracking-tight text-black dark:text-white">
-              Professional Experience
-            </h2>
-          </div>
-
-          <div className="space-y-16 max-w-5xl mx-auto">
-            <div className="border-b border-gray-200 dark:border-gray-800 pb-12">
-              <div className="flex justify-between items-start mb-8">
-                <div>
-                  <h3 className="text-3xl font-light mb-4 tracking-wide text-black dark:text-white">
-                    Research Assistant
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-300 text-xl">Northeastern University, Boston, USA</p>
-                </div>
-                <span className="text-gray-600 dark:text-gray-400 tracking-wide">Jan 2025 - Present</span>
-              </div>
-              <ul className="text-gray-700 dark:text-gray-300 space-y-4 leading-relaxed">
-                <li>
-                  • Developed ML pipelines to analyze retro games' evolution using TensorFlow, Keras, PyTorch, and
-                  Pandas
-                </li>
-                <li>
-                  • Developed a digital preservation platform in collaboration with Directors in Media, integrating
-                  AI-based data visualization
-                </li>
-                <li>• Developed an XR game for a Symposium 'Media in motion' using hoverlay, unity, and GLB, C#</li>
-              </ul>
-            </div>
-
-            <div className="border-b border-gray-200 dark:border-gray-800 pb-12">
-              <div className="flex justify-between items-start mb-8">
-                <div>
-                  <h3 className="text-3xl font-light mb-4 tracking-wide text-black dark:text-white">
-                    Founder & Technology Head
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-300 text-xl">Infobay, Mumbai, India</p>
-                </div>
-                <span className="text-gray-600 dark:text-gray-400 tracking-wide">Nov 2021 - Aug 2024</span>
-              </div>
-              <ul className="text-gray-700 dark:text-gray-300 space-y-4 leading-relaxed">
-                <li>
-                  • Developed an ML-based financial risk analysis model for Middle Eastern banks using Python,
-                  TensorFlow, Keras, and scikit-learn
-                </li>
-                <li>
-                  • Built an AI-powered fashion solution leveraging PyTorch, TensorFlow, and OpenCV to analyze
-                  large-scale image datasets
-                </li>
-                <li>
-                  • Spearheaded the development of sophisticated, responsive front-end architectures using React.js for
-                  high-profile clients including Axis Bank, UPL, Audi India
-                </li>
-                <li>
-                  • Led a cross-functional team of 12 with Agile methods, with CI/CD pipelines and automated testing
-                </li>
-              </ul>
-            </div>
-
-            <div className="border-b border-gray-200 dark:border-gray-800 pb-12">
-              <div className="flex justify-between items-start mb-8">
-                <div>
-                  <h3 className="text-3xl font-light mb-4 tracking-wide text-black dark:text-white">
-                    Associate Technology
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-300 text-xl">Blustream Integrated, Mumbai, India</p>
-                </div>
-                <span className="text-gray-600 dark:text-gray-400 tracking-wide">Mar 2021 - July 2022</span>
-              </div>
-              <ul className="text-gray-700 dark:text-gray-300 space-y-4 leading-relaxed">
-                <li>
-                  • Developed high-performance e-commerce and banking websites using React, WordPress, and Shopify
-                </li>
-                <li>
-                  • Engineered robust API integrations leveraging RESTful APIs, GraphQL, JSON, and event-driven webhooks
-                </li>
-              </ul>
-            </div>
-
-            <div className="border-b border-gray-200 dark:border-gray-800 pb-12">
-              <div className="flex justify-between items-start mb-8">
-                <div>
-                  <h3 className="text-3xl font-light mb-4 tracking-wide text-black dark:text-white">
-                    Development Intern
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-300 text-xl">Digitalbeej, Mumbai, India</p>
-                </div>
-                <span className="text-gray-600 dark:text-gray-400 tracking-wide">May 2020 - Dec 2020</span>
-              </div>
-              <ul className="text-gray-700 dark:text-gray-300 space-y-4 leading-relaxed">
-                <li>
-                  • Developed high-performance, lightweight marketing pages using React.js and Bootstrap, serving
-                  100,000+ monthly users
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What Makes Me Unique */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-24">
-            <div className="w-px h-24 bg-gray-200 dark:bg-gray-800 mx-auto mb-12"></div>
-            <h2 className="text-5xl md:text-6xl font-extralight mb-8 tracking-tight text-black dark:text-white">
-              What Makes Me Unique
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-20 max-w-6xl mx-auto">
-            <div className="space-y-12">
-              <div>
-                <div className="w-px h-16 bg-gray-300 dark:bg-gray-700 mb-8"></div>
-                <h3 className="text-3xl font-light mb-6 tracking-wide text-black dark:text-white">
-                  The Artistic Vision
-                </h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed font-light">
-                  I don't just build applications—I craft experiences. Every line of code is written with intention,
-                  every interface designed with empathy, and every algorithm optimized for elegance.
-                </p>
-              </div>
-
-              <div>
-                <div className="w-px h-16 bg-gray-300 dark:bg-gray-700 mb-8"></div>
-                <h3 className="text-3xl font-light mb-6 tracking-wide text-black dark:text-white">
-                  The Entrepreneurial Spirit
-                </h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed font-light">
-                  Having founded and scaled a technology company, I understand the delicate balance between innovation
-                  and execution, between creative vision and business reality.
-                </p>
-              </div>
-            </div>
-
-            <div className="space-y-12">
-              <div>
-                <div className="w-px h-16 bg-gray-300 dark:bg-gray-700 mb-8"></div>
-                <h3 className="text-3xl font-light mb-6 tracking-wide text-black dark:text-white">
-                  The Research Mindset
-                </h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed font-light">
-                  My academic pursuits keep me at the cutting edge of technology, ensuring that my solutions are not
-                  just current, but future-ready.
-                </p>
-              </div>
-
-              <div>
-                <div className="w-px h-16 bg-gray-300 dark:bg-gray-700 mb-8"></div>
-                <h3 className="text-3xl font-light mb-6 tracking-wide text-black dark:text-white">
-                  The Global Perspective
-                </h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed font-light">
-                  From Mumbai's startup ecosystem to Boston's innovation hub, I bring a unique cultural and technical
-                  perspective that bridges diverse markets and methodologies.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="w-px h-24 bg-gray-200 dark:bg-gray-800 mx-auto mb-12"></div>
-          <p className="text-2xl text-gray-600 dark:text-gray-400 mb-16 italic leading-relaxed font-light">
-            "In the intersection of art and science, magic happens. That's where you'll find me—creating tomorrow's
-            technology with today's passion."
-          </p>
-          <div className="flex flex-wrap justify-center gap-16">
-            <Link href="/research">
-              <button className="text-gray-600 dark:text-gray-300 border-b border-gray-400 dark:border-gray-700 hover:border-gray-600 dark:hover:border-gray-400 hover:text-black dark:hover:text-white transition-all duration-500 pb-2 text-lg tracking-wide">
-                Explore My Research
-              </button>
-            </Link>
-            <Link href="/contact">
-              <button className="text-black dark:text-white border-b border-gray-400 dark:border-gray-600 hover:border-black dark:hover:border-white transition-colors duration-500 pb-2 text-lg tracking-wide">
-                Let's Collaborate
-              </button>
-            </Link>
-          </div>
-        </div>
-      </section>
-    </PageLayout>
-  )
+    <section className="border-t border-gray-200 px-4 py-20 dark:border-gray-800 sm:px-6 lg:px-8"><div className="mx-auto max-w-7xl"><p className="mb-12 text-sm uppercase tracking-[0.3em] text-gray-500">03 · Technical toolkit</p><div className="grid gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-4">{[["AI & ML", "scikit-learn · PyTorch · TensorFlow · XGBoost · OpenCV · NLP · CNNs"], ["Agentic AI", "RAG · tool calling · multi-agent orchestration · LangChain · eval design"], ["Hardware & test", "SCPI · I2C · PyVISA · pytest · board bring-up · signal integrity · DAQ"], ["Product & infra", "Python · C/C++ · TypeScript · React · FastAPI · PostgreSQL · AWS · Docker"]].map(([title, text]) => <article key={title}><h2 className="text-xl font-light text-black dark:text-white">{title}</h2><p className="mt-4 leading-relaxed text-gray-500 dark:text-gray-400">{text}</p></article>)}</div></div></section>
+    <section className="px-4 pb-28 pt-8 text-center sm:px-6 lg:px-8"><Link href="/projects" className="border-b border-black pb-2 text-lg text-black dark:border-white dark:text-white">See selected projects</Link></section>
+  </main></PageLayout>
 }

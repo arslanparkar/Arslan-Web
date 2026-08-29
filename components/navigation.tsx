@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useTheme } from "next-themes"
@@ -9,31 +9,17 @@ import { Menu, X, Sun, Moon } from "lucide-react"
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
   const { theme, setTheme } = useTheme()
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
+    { name: "Projects", href: "/projects" },
     { name: "Work", href: "/work" },
     { name: "Research", href: "/research" },
     { name: "Contact", href: "/contact" },
   ]
-
-  const handleNavClick = () => {
-    setIsMenuOpen(false)
-    // Scroll to top when navigating
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    }, 100)
-  }
-
-  if (!mounted) return null
 
   return (
     <nav className="fixed top-0 w-full bg-white/95 dark:bg-black/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 z-50">
@@ -42,7 +28,6 @@ export default function Navigation() {
           <Link
             href="/"
             className="text-xl font-medium text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-            onClick={handleNavClick}
           >
             Arslan Parkar
           </Link>
@@ -56,8 +41,7 @@ export default function Navigation() {
                 className={`text-sm font-medium transition-colors hover:text-black dark:hover:text-white ${
                   pathname === item.href ? "text-black dark:text-white" : "text-gray-600 dark:text-gray-400"
                 }`}
-                onClick={handleNavClick}
-              >
+                  >
                 {item.name}
               </Link>
             ))}
@@ -99,7 +83,7 @@ export default function Navigation() {
                 key={item.name}
                 href={item.href}
                 className="block py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
-                onClick={handleNavClick}
+                onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
               </Link>
